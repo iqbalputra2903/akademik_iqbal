@@ -2,61 +2,49 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Program Studi</title>
+    <title>Tambah Prodi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <style>
-        body { background-color: #f0f4f8; }
-        .card { border: none; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .btn-blue { background-color: #0d6efd; color: white; border: none; }
-        .btn-blue:hover { background-color: #0b5ed7; color: white; }
-    </style>
 </head>
-<body>
+<body class="bg-light">
 
-<div class="container my-5">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card p-4">
-                <div class="text-center mb-4">
-                    <h3 class="fw-bold text-primary"><i class="bi bi-building-add"></i> Tambah Prodi</h3>
-                    <p class="text-muted">Input Data Program Studi Baru</p>
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h5 class="mb-0">Input Program Studi</h5>
                 </div>
-                
-                <form method="POST" action="proses_prodi.php">
-                    <div class="mb-3">
-                        <label class="form-label fw-bold">Nama Program Studi</label>
-                        <input type="text" class="form-control" name="nama_prodi" placeholder="Contoh: Teknik Informatika" required>
-                    </div>
+                <div class="card-body">
+                    <form method="POST" action="proses_prodi.php">
+                        <div class="mb-3">
+                            <label class="form-label">Nama Program Studi</label>
+                            <input type="text" class="form-control" name="nama_prodi" required>
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label fw-bold">Jenjang</label>
-                        <select class="form-select" name="jenjang" required>
-                            <option value="" selected disabled>-- Pilih Jenjang --</option>
-                            <option value="D2">D2</option>
-                            <option value="D3">D3</option>
-                            <option value="D4">D4</option>
-                            <option value="S2">S2</option>
-                        </select>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jenjang</label>
+                            <select class="form-select" name="jenjang" required>
+                                <option value="D2">D2</option>
+                                <option value="D3">D3</option>
+                                <option value="D4">D4</option>
+                                <option value="S2">S2</option>
+                            </select>
+                        </div>
 
-                    <div class="mb-4">
-                        <label class="form-label fw-bold">Keterangan</label>
-                        <textarea class="form-control" name="keterangan" rows="3" placeholder="Deskripsi singkat prodi..."></textarea>
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label">Keterangan</label>
+                            <textarea class="form-control" name="keterangan" rows="3"></textarea>
+                        </div>
 
-                    <div class="d-grid gap-2 d-flex justify-content-between">
-                        <a href="index.php" class="btn btn-light text-secondary fw-bold">Kembali</a>
-                        <button type="submit" class="btn btn-blue px-4 fw-bold shadow-sm" name="simpan_prodi">
-                            <i class="bi bi-save"></i> Simpan Prodi
-                        </button>
-                    </div>
-                </form>
+                        <div class="d-flex justify-content-between">
+                            <a href="view_prodi.php" class="btn btn-secondary">Batal</a>
+                            <button type="submit" class="btn btn-primary" name="simpan_prodi">Simpan</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
